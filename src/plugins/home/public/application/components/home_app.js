@@ -17,6 +17,7 @@ import { getTutorial } from '../load_tutorials';
 import { replaceTemplateStrings } from './tutorial/replace_template_strings';
 import { getServices } from '../kibana_services';
 import { GettingStarted } from './guided_onboarding';
+import { CloudMigration } from './cloud_migration';
 
 const REDIRECT_TO_INTEGRATIONS_TAB_IDS = ['all', 'logging', 'metrics', 'security'];
 
@@ -70,6 +71,9 @@ export function HomeApp({ directories, solutions }) {
           <Route path="/tutorial_directory/:tab?" render={renderTutorialDirectory} />
           <Route path="/getting_started">
             <GettingStarted />
+          </Route>
+          <Route path="/cloud_migration">
+            <CloudMigration />
           </Route>
           <Route exact path="/">
             <Home
